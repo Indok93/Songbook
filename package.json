@@ -12,5 +12,8 @@
   },
   "author": "Indo",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

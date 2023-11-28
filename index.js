@@ -1,7 +1,13 @@
-import http from 'http';
+import express from 'express';
+import { router as SongRouter} from './Routes/song.router.js';
+import { router as ArtistRouter} from './Routes/artist.router.js';
 
-http.createServer((request, response) => {
-    response.writeHead(200, {'Content-Type': 'text/html'});
-    response.write('Hello World');
-    response.end();
-}).listen(5000)
+const app = express();
+const port = 4000;
+
+app.use(SongRouter);
+app.use(ArtistRouter);
+
+app.listen(port, () => {
+    console.log(`Server kører på port ${port}`);
+})
