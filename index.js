@@ -1,6 +1,5 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import db from './Config/db.config.js';
 import { router as HomeRouter} from './Routes/home.router.js';
 import { router as ArtistRouter} from './Routes/artist.router.js';
 import { router as ListRouter} from './Routes/list.router.js';

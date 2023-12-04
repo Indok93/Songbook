@@ -1,7 +1,7 @@
 import mysql from 'mysql2'
 
 import dotenv from 'dotenv'
-dotenv.config()
+dotenv.config();
 
 const db = mysql.createConnection({
 	host: process.env.DBHOST,
@@ -11,6 +11,6 @@ const db = mysql.createConnection({
 	port: process.env.DBPORT,
 })
 
-db.connect()
+db.connect();
 
 export default db
