@@ -1,13 +1,15 @@
 import express from 'express';
-import db from '../Config/db.config.js';
+import sequelize from '../Config/db.sequelize.js';
+import SongController from '../Controllers/song.controller.js';
 
 const router = express.Router();
-const sql = `SELECT * FROM song`;
-router.get('/', (request, response) => {
-    response.status(200).send('Velkommen til sangbogen');
-    db.query(sql, (error,result) => {
-        console.log(result);
-    });
-});
 
-export { router }
+// Instans
+const controller = new SongController();
+
+
+router.get('/songs', (req, res) => { controller.list(req, res) });
+router.get('/songs/:id([0-9]*)', (req, res) => { controller.get(req, res) });
+
+
+export { router as SongRouter }
